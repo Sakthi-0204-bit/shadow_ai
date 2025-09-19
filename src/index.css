@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shadow AI Chatbot Design System - Minimalist Grey Scale */
+
+@layer base {
+  :root {
+    /* Main Background & Surfaces */
+    --background: 0 0% 98%;
+    --surface: 0 0% 100%;
+    --surface-secondary: 0 0% 96%;
+    
+    /* Text Colors */
+    --foreground: 0 0% 15%;
+    --foreground-secondary: 0 0% 45%;
+    --foreground-muted: 0 0% 65%;
+
+    /* Chat Interface */
+    --chat-background: 0 0% 97%;
+    --chat-user-bubble: 0 0% 20%;
+    --chat-user-text: 0 0% 98%;
+    --chat-ai-bubble: 0 0% 100%;
+    --chat-ai-text: 0 0% 15%;
+    --chat-input: 0 0% 100%;
+    --chat-input-border: 0 0% 85%;
+
+    /* Sidebar & Navigation */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-hover: 0 0% 95%;
+
+    /* Interactive Elements */
+    --primary: 0 0% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 0 0% 35%;
+    
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 25%;
+    --secondary-hover: 0 0% 85%;
+
+    /* Accents & Status */
+    --accent: 0 0% 88%;
+    --accent-foreground: 0 0% 25%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+
+    /* Borders & Inputs */
+    --border: 0 0% 88%;
+    --input: 0 0% 100%;
+    --input-border: 0 0% 85%;
+    --ring: 0 0% 60%;
+
+    /* Gradients */
+    --gradient-subtle: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 96%) 100%);
+    --gradient-chat: linear-gradient(to bottom, hsl(0 0% 97%), hsl(0 0% 98%));
+    --gradient-hover: linear-gradient(135deg, hsl(0 0% 95%) 0%, hsl(0 0% 92%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-chat: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode maintains the grey scale theme */
+    --background: 0 0% 8%;
+    --surface: 0 0% 12%;
+    --surface-secondary: 0 0% 10%;
+    
+    --foreground: 0 0% 90%;
+    --foreground-secondary: 0 0% 70%;
+    --foreground-muted: 0 0% 50%;
+
+    --chat-background: 0 0% 9%;
+    --chat-user-bubble: 0 0% 85%;
+    --chat-user-text: 0 0% 10%;
+    --chat-ai-bubble: 0 0% 15%;
+    --chat-ai-text: 0 0% 90%;
+    --chat-input: 0 0% 12%;
+    --chat-input-border: 0 0% 25%;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-hover: 0 0% 15%;
+
+    --primary: 0 0% 80%;
+    --primary-foreground: 0 0% 10%;
+    --primary-hover: 0 0% 75%;
+    
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 90%;
+    --secondary-hover: 0 0% 25%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
+    --input-border: 0 0% 25%;
+    --ring: 0 0% 50%;
+
+    --gradient-subtle: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 12%) 100%);
+    --gradient-chat: linear-gradient(to bottom, hsl(0 0% 9%), hsl(0 0% 10%));
+    --gradient-hover: linear-gradient(135deg, hsl(0 0% 15%) 0%, hsl(0 0% 18%) 100%);
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0 0 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-chat: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar for chat area */
+  .chat-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .chat-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .chat-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--foreground-muted));
+    border-radius: 3px;
+  }
+
+  .chat-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground-secondary));
+  }
+}
+
+@layer components {
+  /* Chat message animations */
+  .message-enter {
+    animation: messageSlideIn 0.3s ease-out;
+  }
+
+  .typing-indicator {
+    animation: typingPulse 1.5s ease-in-out infinite;
+  }
+
+  .file-upload-hover {
+    @apply transition-all duration-300 border-2 border-dashed border-primary/30 bg-primary/5;
+  }
+
+  /* Button variants for Shadow theme */
+  .btn-shadow {
+    @apply bg-primary text-primary-foreground hover:bg-primary-hover transition-all duration-200 rounded-lg px-4 py-2 font-medium;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-secondary-hover text-foreground transition-all duration-200 rounded-lg px-3 py-2;
+  }
+}
+
+@layer utilities {
+  /* Shadow-specific utilities */
+  .shadow-chat {
+    box-shadow: var(--shadow-chat);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .gradient-chat {
+    background: var(--gradient-chat);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
+
+/* Keyframes for animations */
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes typingPulse {
+  0%, 60%, 100% {
+    opacity: 0.4;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
