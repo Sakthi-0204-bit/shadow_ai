@@ -75,10 +75,6 @@ Ready to share your Shadow AI with the world?
 
 To create a final, optimized version of the app (ready for hosting), run:
 
-```sh
+```
 npm run build
 ```
-
-This command packs everything neatly into a folder (usually named `dist`), which you can upload to any static web host (like Vercel, Netlify, or GitHub Pages).
-
------
